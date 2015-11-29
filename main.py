@@ -19,7 +19,7 @@ class Handler(webapp2.RequestHandler):
 
 class MainHandler(Handler):
     def get(self):
-        self.render("input.html")
+        self.render("input.html", title="calculator")
 
 class AnswerHandler(Handler):
 	def post(self):
@@ -36,7 +36,7 @@ class AnswerHandler(Handler):
 			number = float(num1) / float(num2)
 		if opp == "**":
 			number = float(num1) ** float(num2)
-		self.render("answer.html", ans=number)
+		self.render("answer.html", ans=number, title="answers")
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
