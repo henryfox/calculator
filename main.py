@@ -26,21 +26,20 @@ class AnswerHandler(Handler):
 		num1 = self.request.get("num1")
 		opp = self.request.get("opp")
 		num2 = self.request.get("num2")
-		if num1 == "":
+		if num1 or num2 == "":
 			self.redirect("/error")
-		if num2 == "":
-			self.redirect("/error")
-		if opp == "+":
-			number = float(num1) + float(num2)
-		if opp == "-":
-			number = float(num1) - float(num2)
-		if opp == "*":
-			number = float(num1) * float(num2)
-		if opp == "/":
-			number = float(num1) / float(num2)
-		if opp == "**":
-			number = float(num1) ** float(num2)
-		self.render("answer.html", ans=number, title="answers")
+		if num1 or num2 != "":
+			if opp == "+":
+				number = float(num1) + float(num2)
+			if opp == "-":
+				number = float(num1) - float(num2)
+			if opp == "*":
+				number = float(num1) * float(num2)
+			if opp == "/":
+				number = float(num1) / float(num2)
+			if opp == "**":
+				number = float(num1) ** float(num2)
+			self.render("answer.html", ans=number, title="answers")
 
 class ErrorHandler(Handler):
 	def get(self):
