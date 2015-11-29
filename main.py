@@ -26,6 +26,10 @@ class AnswerHandler(Handler):
 		num1 = self.request.get("num1")
 		opp = self.request.get("opp")
 		num2 = self.request.get("num2")
+		if num1 == "":
+			self.redirect("/error")
+		if num2 == "":
+			self.redirect("/error")
 		if opp == "+":
 			number = float(num1) + float(num2)
 		if opp == "-":
@@ -38,7 +42,12 @@ class AnswerHandler(Handler):
 			number = float(num1) ** float(num2)
 		self.render("answer.html", ans=number, title="answers")
 
+class ErrorHandler(Handler):
+	def get(self):
+		self.render("error.html")
+
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/answer', AnswerHandler)
+    ('/answer', AnswerHandler),
+    ('/error', ErrorHandler)
 ], debug=True)
