@@ -6,5 +6,4 @@ this is a google app engine python calculator that I made
 * multiplication
 * divison
 * exponents
-### Licanse
-[mit licanse](https://github.com/henryfox/calculator/blob/master/LICENSE)
+[License](https://github.com/henryfox/calculator/blob/master/LICENSE)
