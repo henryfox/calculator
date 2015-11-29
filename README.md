@@ -1,8 +1,8 @@
 # calculator
-this is a google app engine python calculator that i made
-### feturs
-* adition
-* subtracion
-* multaplaction
+this is a google app engine python calculator that I made
+### features
+* addition
+* subtraction
+* multiplication
 * divison
-* exponts
+* exponents
