@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/answer" method="post">
+    <label>
+        first number
+        <input type="text" name="num1">
+    </label>
+    <select name="opp">
+        <option value="+">plus</option>
+        <option value="-">minus</option>
+        <option value="*">times</option>
+        <option value="/">divide</option>
+        <option value="**">exponint</option>
+    </select>
+    <label>
+        second number
+        <input type="text" name="num2">
+    </label>
+    <button class="btn btn-success">submit</button>
+</form>
+{% endblock %}
